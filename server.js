@@ -7,8 +7,12 @@ const dbURI = process.env.MONGODB_URI;
 const PORT = process.env.PORT || 3000;
 
 const app = express();
-const indexRouter = require('./routes/index');
 
+// Routes
+const indexRouter = require('./routes/index');
+const authorRouter = require('./routes/authors');
+
+// Views middleware
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 app.set('layout', 'layouts/layout');
@@ -17,6 +21,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/', indexRouter);
+app.use('/authors', authorRouter);
 
 // Database connection
 mongoose.connect(dbURI, {
