@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const expressLayouts = require('express-ejs-layouts');
+const methodOverride = require('method-override');
 const indexRouter = require('./routes/index');
 const authorRouter = require('./routes/authors');
 const bookRouter = require('./routes/books');
@@ -17,8 +18,9 @@ app.use(expressLayouts);
 app.set('layout', 'layouts/layout');
 app.use(express.static('public'));
 
-/* Form submission middleware 
+/* Form submission middlewares
 (also accounts for base64 encoded images with a limit of 10mb) */
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false, limit: '10mb' }));
 
 // Routes
