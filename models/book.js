@@ -45,4 +45,4 @@ bookSchema.virtual('dataURL').get(function () {
   return null;
 });
 
-module.exports = model('book', bookSchema);
+module.exports = model('Book', bookSchema);

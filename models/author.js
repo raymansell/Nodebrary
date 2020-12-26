@@ -20,4 +20,4 @@ authorSchema.pre('deleteOne', { document: true }, function (next) {
   });
 });
 
-module.exports = model('author', authorSchema);
+module.exports = model('Author', authorSchema);
