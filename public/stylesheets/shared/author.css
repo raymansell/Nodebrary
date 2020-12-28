@@ -1,0 +1,11 @@
+.author-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.author-name {
+  font-size: 1em;
+  font-weight: 600;
+  color: rgb(99, 95, 95);
+}

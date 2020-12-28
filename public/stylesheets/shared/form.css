@@ -1,0 +1,98 @@
+:root {
+  --form-label-font-size: 1rem;
+}
+
+.form-row {
+  display: flex;
+  margin-bottom: 0.2em;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(304px, 1fr));
+  column-gap: 1em;
+}
+
+.form-grid > * {
+  margin-bottom: 0.2em;
+}
+
+.form-row-wrap {
+  flex-wrap: wrap;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+}
+
+.form-item-cover {
+  justify-self: center;
+}
+
+.form-item-description {
+  height: 8em;
+}
+
+.form-row-end {
+  justify-content: flex-end;
+}
+
+.form-item > label {
+  margin-bottom: 0.25em;
+}
+
+.form-item input,
+.form-item select,
+.form-item textarea {
+  height: 2em;
+  padding: 0 0.2em;
+  border: 2px solid var(--color-text-primary);
+  border-radius: 0.25rem;
+  outline: none;
+  background-color: #f8f8f8;
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-text-secondary);
+  width: 100%;
+}
+
+.form-item input:focus,
+.form-item select:focus,
+.form-item textarea:focus {
+  border-color: #2d57a0;
+}
+
+.form-item textarea {
+  height: 100%;
+  resize: none;
+}
+
+.filepond--root {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 0;
+}
+
+.filepond--panel-root {
+  background-color: #f8f8f8;
+  border: 2px solid var(--color-text-primary);
+}
+
+.filepond--drop-label {
+  font-size: inherit;
+}
+
+@media screen and (min-width: 712px) {
+  .form-item-cover {
+    justify-self: flex-start;
+  }
+  .form-grid-cover {
+    grid-template-columns: 1fr 4fr;
+  }
+  .form-item-description {
+    height: inherit;
+  }
+}

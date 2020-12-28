@@ -1,0 +1,51 @@
+:root {
+  --color-btn-primary-background: #0b3042da;
+  --color-btn-primary-background-light: #1b4357da;
+  --color-btn-danger-background: #ffa375;
+  --color-btn-danger-background-light: #ffa375da;
+}
+
+.btn {
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.2em 0.5em;
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-primary {
+  color: white;
+  background-color: var(--color-btn-primary-background);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  /* background-color: #0b3042; */
+  background-color: var(--color-btn-primary-background-light);
+}
+
+.btn-danger {
+  color: #000;
+  background-color: var(--color-btn-danger-background);
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+  background-color: var(--color-btn-danger-background-light);
+}
+
+.btn-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.btn-row > * {
+  margin-left: 0.5em;
+}
+
+.btn-row > *:first-child {
+  margin-left: 0;
+}

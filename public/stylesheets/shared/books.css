@@ -1,0 +1,90 @@
+:root {
+  --book-cover-width: 150px;
+  --book-cover-width-large: 180px;
+  --book-cover-aspect-ratio: 0.75;
+}
+
+.book-cover {
+  width: var(--book-cover-width);
+  height: calc(var(--book-cover-width) / var(--book-cover-aspect-ratio));
+}
+
+.book-cover-filepond {
+  width: 200px;
+  height: calc(200px / 0.75);
+}
+
+.book-cover-large {
+  --book-cover-width: var(--book-cover-width-large);
+}
+
+.book-grid {
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, var(--book-cover-width));
+  margin-top: 1em;
+}
+
+.book-grid-large {
+  grid-template-columns: repeat(auto-fill, var(--book-cover-width-large));
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-card {
+  margin-bottom: 1em;
+}
+
+.book-title {
+  text-align: center;
+}
+
+.book-details-label {
+  margin-top: 1em;
+  font-weight: 600;
+}
+
+.book-details-label:first-child {
+  margin-top: 0;
+}
+
+.book-details-btn-grid {
+  display: grid;
+  justify-items: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  grid-template-areas:
+    'edit delete'
+    'author author';
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.book-details-btn-grid .btn,
+.book-details-btn-grid form {
+  width: 100%;
+}
+
+.book-details-author-btn {
+  grid-area: author;
+  justify-self: stretch;
+}
+
+@media screen and (min-width: 712px) {
+  .book-title {
+    text-align: left;
+  }
+  .book-details {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 2em;
+  }
+  .book-details-details {
+    margin-left: 2em;
+  }
+}
